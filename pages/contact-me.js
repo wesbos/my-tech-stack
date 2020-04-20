@@ -1,11 +1,11 @@
-import withLayout from "../components/Layout"
+import Layout from "../components/Layout"
 
 const Contact = () => {
   return (
-    <h1>
-      Contact Me
-    </h1>
+    <Layout>
+      <h1>Contact Me</h1>
+    </Layout>
   )
 }
 
-export default withLayout(Contact);
+export default Contact;

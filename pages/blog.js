@@ -1,4 +1,4 @@
-import withLayout from '../components/Layout';
+import Layout from '../components/Layout';
 import Content from '../components/Content';
 
 
@@ -10,14 +10,13 @@ const Blog = () => {
   ].map(blogId => <Content id={blogId} key={blogId} />)
 
   return (
-    <span>
+    <Layout>
       <h1>My Blog</h1>
       <ul>
         {listOfBlogs}
       </ul>
-    </span>
-
+    </Layout>
   )
 } 
 
-export default withLayout(Blog);
+export default Blog;

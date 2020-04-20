@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router';
-import withLayout from '../components/Layout';
+import Layout from '../components/Layout';
 
 const Page = () => {
   const router = useRouter();
-  console.log(router.query)
   return (
-    <>
+    <Layout>
       <h1>{router.query.title}</h1>
       <p>This is the blog post content.</p>
-    </>
+    </Layout>
   );
 };
 
-export default withLayout(Page)
+export default Page;

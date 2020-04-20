@@ -1,7 +1,12 @@
-import withLayout from '../components/Layout';
+import Layout from '../components/Layout';
 
 const About = () => {
-      return <p>Hello About.js</p>
+      return (
+            <Layout>
+                  <p>Hello About.js</p>
+            </Layout>
+      );
+
 }
 
-export default withLayout(About);
+export default About;
