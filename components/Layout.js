@@ -9,7 +9,7 @@ import utilStyles from '../styles/utils.module.css';
 
 const Layout = ({ children, home }) => {
   return (
-    <div className={styles.container}>
+    <div className='container mx-auto'>
       <Head>
         <title>Welcome! ✋</title>
         <link/>
