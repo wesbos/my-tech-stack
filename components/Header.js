@@ -1,25 +1,39 @@
 import Link from 'next/link';
 
-const linkStyle = {
-  marginRight: 15
-};
 
-const Header = () => (
-  <div>
-    {/* Add props at the <a> level and not Link component*/}
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-    <Link href="/blog">
-      <a style={linkStyle}>Blog </a>
-    </Link>
-    <Link href="/contact-me">
-      <a style={linkStyle}>Let's Connect </a>
-    </Link>
-  </div>
-);
+const Header = props => {
+  const name = 'Jacob Andrew Smith';
+  const {isHome, styles, utilStyles } = props;
+  const { navWrapper, navItems, headerHomeImage, headerImage, header } = styles;
+  const { borderCircle, heading2Xl, headingLg, colorInherit } = utilStyles;
+  return (
+    <div className={header}>
+      <nav className={navWrapper}>
+        <Link href="/">
+          <a id="home" className={navItems}>Home</a>
+        </Link>
+        <Link href="/about">
+          <a className={navItems}>About</a>
+        </Link>
+        <Link href="/blog">
+          <a className={navItems}>Blog</a>
+        </Link>
+        <Link href="/contact-me">
+          <a className={navItems}>Let's Connect </a>
+        </Link>
+      </nav>
+      <Link href="/">
+        <a>
+        <img
+          src="/images/profile.jpg"
+          className={isHome ? `${headerHomeImage} ${borderCircle}` : `${headerImage} ${borderCircle}`}
+          alt={name}
+          />
+        </a>
+      </Link>
+      <h1 className={isHome ? `${heading2Xl} ${colorInherit}` : `${headingLg} ${colorInherit}`}>{name}</h1>
+    </div>
+  )
+}
 
 export default Header;
