@@ -2,8 +2,8 @@
 
 const Footer = props => {
   return (
-    <footer>
-      Jacob Andrew Smith © 2020
+    <footer className='text-gray-400 mb-4'>
+      © Jacob Andrew Smith, All rights reserved.
     </footer>
   )
 }

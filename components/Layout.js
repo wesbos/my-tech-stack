@@ -9,24 +9,28 @@ import utilStyles from '../styles/utils.module.css';
 
 const Layout = ({ children, home }) => {
   return (
-    <div className='container mx-auto'>
+    <div className='flex flex-col min-h-screen'>
       <Head>
         <title>Welcome! ✋</title>
         <link/>
         <meta
-          name="description"
-          content="Tech Stack by Jacob Andrew Smith"
+          name='description'
+          content='Tech Stack by Jacob Andrew Smith'
         />
         <meta
           property="og:image"
           // content image goes here
         />
         {/* <meta name="og:title" content={siteTitle} /> */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <Header isHome={home} styles={styles} utilStyles={utilStyles} />
-      {children}
-      {/* <Footer/> */}
+      <article className='flex-1'>
+        {children}
+      </article>
+      <div className='flex justify-center'>
+      <Footer/>
+      </div>
     </div>
   )
 };

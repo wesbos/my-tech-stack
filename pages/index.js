@@ -11,9 +11,9 @@ import utilStyles from '../styles/utils.module.css';
 const Index = ({ allPosts }) => {
   return (
     <Layout home>
-      <div className={utilStyles.typewriter}>
-        <h2>Welcome Friends!</h2>
-      </div>
+      {/* <div className={utilStyles.typewriter}> */}
+        {/* <h2>Welcome Friends!</h2> */}
+      {/* </div> */}
       <br/>
       <h3>Blog</h3>
       <ul className={utilStyles.listItem}>
