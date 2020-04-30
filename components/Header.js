@@ -8,7 +8,7 @@ const Header = props => {
   const { borderCircle, heading2Xl, headingLg, colorInherit } = utilStyles;
   return (
     <header>
-      <nav className='flex top-0 left-0 relative items-center justify-center flex-wrap p-6'>
+      <nav className='mb-8 flex top-0 left-0 relative items-center justify-center flex-wrap p-6'>
         <div>
           <Link href='/'>
             <a className='absolute top-0 left-0 order-first'>

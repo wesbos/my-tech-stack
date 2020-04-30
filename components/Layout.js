@@ -25,7 +25,7 @@ const Layout = ({ children, home }) => {
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <Header isHome={home} styles={styles} utilStyles={utilStyles} />
-      <article className='flex-1'>
+      <article className='flex-1 m-16'>
         {children}
       </article>
       <div className='flex justify-center'>
