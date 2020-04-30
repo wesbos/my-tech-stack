@@ -9,8 +9,9 @@ import utilStyles from '../styles/utils.module.css';
 // add attributes for Link at the <a> tag level
 
 const Index = ({ allPosts }) => {
+  const title = 'Welcome! 👋'
   return (
-    <Layout home>
+    <Layout home title={title} >
         <h1 className='text-6xl'>Welcome!</h1>
         <section className='flex'>
           <article className='w-4/6 leading-10 p-8'>
