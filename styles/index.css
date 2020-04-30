@@ -3,3 +3,29 @@
 @tailwind components;
 
 @tailwind utilities;
+
+html, 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+
+} */
+
+* {
+  box-sizing:border-box;
+}
+
+a {
+  color: darkslategray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: lightgrey;
+}

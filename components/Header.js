@@ -24,7 +24,7 @@ const Header = props => {
           <a className='hover:no-underline hover:bg-blue-700 hover:text-white rounded-sm mr-8 px-1 font-semibold text-xl tracking-tight border border-black border-8'>JS</a>
         </Link> */}
         <Link href="/">
-          <a id="home" className='content-around mr-8 hover:text-blue-800'>Home</a>
+          <a id="home" className='content-around mr-8'>Home</a>
         </Link>
         <Link href="/about">
           <a className='content-around mr-8'>About</a>
