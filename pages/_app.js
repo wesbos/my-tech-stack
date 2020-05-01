@@ -1,7 +1,7 @@
 
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import '../static/nprogress.css';
+import '../public/styles/nprogress.css';
 import '../styles/global.css';
 import '../styles/index.css';
 
@@ -11,7 +11,12 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 
 const App = ({ Component, pageProps }) => {
-  return <Component {...pageProps}/>
+  return (
+    <div className=''>
+      <Component {...pageProps}/>
+    </div>
+  )
+  
 }
 
 export default App

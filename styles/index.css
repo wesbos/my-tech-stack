@@ -9,8 +9,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
   Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
-  font-size: 18px;
-  margin: 0;
+  font-size: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 /* h1, h2, h3, h4, h5, h6 {
@@ -27,5 +28,17 @@ a {
 }
 
 a:hover {
-  color: lightgrey;
+  color: lightgray;
+}
+
+button {
+  border: solid 1px #84a98c;
+  border-radius: 4px;
+  color: darkslategray;
+}
+
+button:hover {
+  background-color: #84a98c;
+  color: lightgray;
+  border: solid 1px lightgray;
 }

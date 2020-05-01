@@ -1,11 +1,24 @@
 
 import Nav from './Nav';
 
+
+// closeNav = () => {
+//   document.body.getElementsByClassName('overlay')[0].style.width = "0%";
+//   document.body.getElementsByClassName('navIcon')[0].classList.remove('hide');
+//   document.body.getElementsByClassName('navIcon')[1].classList.remove('hide');
+// }
+
+// openNav = () => {
+//   document.body.getElementsByClassName('overlay')[0].style.height = "10%";
+//   document.body.getElementsByClassName('navIcon')[0].classList.add('hide');
+//   document.body.getElementsByClassName('navIcon')[1].classList.add('hide');
+// }
+
 const Header = () => {
   const name = 'Jacob Andrew Smith';
   return (
     <header>
-      <Nav name={name} />
+      <Nav name={name}/>
     </header>
   )
 }
