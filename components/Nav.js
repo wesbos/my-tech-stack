@@ -1,14 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+const desktopNav = () => {
+  if (window.innerWidth >= 1023) {
+    let navContainer = document.getElementsByClassName('nav-items');
+    let navLinks = document.getElementsByClassName('nav-link');
+    navContainer[0].classList.add('maxLg:hidden');
+    navContainer[0].classList.remove('flex-col');
+    navContainer[0].classList.remove('text-right');
+    navLinks[0].classList.add('mr-8') // home
+    navLinks[1].classList.add('mr-8') // blog
+    navLinks[2].classList.add('mr-8'); // contact-me
+  }
+}
 
 const Nav = props => {
   const [action, setNav] = useState(false);
 
-  return (
-    <nav className='mb-8 flex top-0 left-0 relative justify-end items-center minLg:justify-center p-6'>
+  // remove class on nav-items when screen width is at 1023 or greater
+  useEffect(() => {
+    window.addEventListener('resize', desktopNav);
+  });
+
+  return ( 
+    <nav className='mb-8 flex flex-col top-0 left-0 relative justify-end items-end minLg:items-center minLg:justify-center p-6'>
       <div className='minLg:hidden'>
-        <button className='px-3 py-2 flex' onClick={(e) => {
+        <button className='px-3 py-2' onClick={(e) => {
           setNav(!action);
           navManager(e, action);
         }}>
@@ -60,22 +77,23 @@ const Nav = props => {
 
 const navManager = (e, action) => {
   e.persist();
-  console.log(e.target.id);
   
   let navContainer = document.getElementsByClassName('nav-items');
   let navLinks = document.getElementsByClassName('nav-link');
     if (action) {
       navContainer[0].classList.remove('maxLg:hidden');
       navContainer[0].classList.add('flex-col');
-      navLinks[0].classList.add('flex-col') // home
-      navLinks[1].classList.add('flex-col') // blog
-      navLinks[2].classList.add('flex-col'); // contact-me
+      navContainer[0].classList.add('text-right');
+      navLinks[0].classList.remove('mr-8') // home
+      navLinks[1].classList.remove('mr-8') // blog
+      navLinks[2].classList.remove('mr-8'); // contact-me
     } else {
       navContainer[0].classList.add('maxLg:hidden');
       navContainer[0].classList.remove('flex-col');
-      navLinks[0].classList.remove('flex-col') // home
-      navLinks[1].classList.remove('flex-col') // blog
-      navLinks[2].classList.remove('flex-col'); // contact-me
+      navContainer[0].classList.remove('text-right');
+      navLinks[0].classList.add('mr-8') // home
+      navLinks[1].classList.add('mr-8') // blog
+      navLinks[2].classList.add('mr-8'); // contact-me
   }
 
 }
