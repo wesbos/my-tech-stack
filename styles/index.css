@@ -31,14 +31,6 @@ a:hover {
   color: lightgray;
 }
 
-button {
-  border: solid 1px #84a98c;
-  border-radius: 4px;
-  color: darkslategray;
-}
-
-button:hover {
-  background-color: #84a98c;
-  color: lightgray;
-  border: solid 1px lightgray;
+button:focus {
+  outline: none;
 }

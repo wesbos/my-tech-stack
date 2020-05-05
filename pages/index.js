@@ -7,7 +7,7 @@ import { getSortedPostsData } from '../lib/posts';
 import utilStyles from '../styles/utils.module.css';
 
 // add attributes for Link at the <a> tag level
-
+// looking in anime.js for animating stuff
 const Index = ({ allPosts }) => {
   const title = 'Welcome! 👋'
   return (

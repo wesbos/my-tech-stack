@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const desktopNav = () => {
-  if (window.innerWidth >= 1023) {
-    let navContainer = document.getElementsByClassName('nav-items');
-    let navLinks = document.getElementsByClassName('nav-link');
-    navContainer[0].classList.add('maxLg:hidden');
-    navContainer[0].classList.remove('flex-col');
-    navContainer[0].classList.remove('text-right');
-    navLinks[0].classList.add('mr-8') // home
-    navLinks[1].classList.add('mr-8') // blog
-    navLinks[2].classList.add('mr-8'); // contact-me
-  }
-}
-
 const Nav = props => {
   const [action, setNav] = useState(false);
 
@@ -24,14 +11,18 @@ const Nav = props => {
 
   return ( 
     <nav className='mb-8 flex flex-col top-0 left-0 relative justify-end items-end minLg:items-center minLg:justify-center p-6'>
-      <div className='minLg:hidden'>
-        <button className='px-3 py-2' onClick={(e) => {
-          setNav(!action);
-          navManager(e, action);
-        }}>
-          <svg className='fill-current h-3 w-3' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><title>Menu</title><path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'/></svg>
-        </button>
-      </div>
+            <button 
+              type="button" 
+              className='hamburger hamburger--collapse minLg:hidden' 
+              onClick={(e) => {
+                setNav(!action);
+                navManager(e, action);
+            }}>
+              <span className="hamburger-box">
+                <span className="hamburger-inner"></span>
+              </span>
+            </button>  
+          {/* </span> */}
       <div>
         <Link href='/'>
           <a className='absolute top-0 left-0 order-first'>
@@ -74,23 +65,38 @@ const Nav = props => {
     </nav>
   )
 }
+const desktopNav = () => {
+  if (window.innerWidth >= 1023) {
+    let hamburger = document.getElementsByClassName('hamburger')[0];
+    let navContainer = document.getElementsByClassName('nav-items')[0];
+    let navLinks = document.getElementsByClassName('nav-link');
+    hamburger.classList.remove('is-active');
+    navContainer.classList.add('maxLg:hidden');
+    navContainer.classList.remove('flex-col');
+    navContainer.classList.remove('text-right');
+    navLinks[0].classList.add('mr-8') // home
+    navLinks[1].classList.add('mr-8') // blog
+    navLinks[2].classList.add('mr-8'); // contact-me
+  }
+}
 
 const navManager = (e, action) => {
-  e.persist();
-  
-  let navContainer = document.getElementsByClassName('nav-items');
+  let hamburger = document.getElementsByClassName('hamburger')[0];
+  let navContainer = document.getElementsByClassName('nav-items')[0];
   let navLinks = document.getElementsByClassName('nav-link');
     if (action) {
-      navContainer[0].classList.remove('maxLg:hidden');
-      navContainer[0].classList.add('flex-col');
-      navContainer[0].classList.add('text-right');
+      hamburger.classList.add('is-active');
+      navContainer.classList.remove('maxLg:hidden');
+      navContainer.classList.add('flex-col');
+      navContainer.classList.add('text-right');
       navLinks[0].classList.remove('mr-8') // home
       navLinks[1].classList.remove('mr-8') // blog
       navLinks[2].classList.remove('mr-8'); // contact-me
     } else {
-      navContainer[0].classList.add('maxLg:hidden');
-      navContainer[0].classList.remove('flex-col');
-      navContainer[0].classList.remove('text-right');
+      hamburger.classList.remove('is-active');
+      navContainer.classList.add('maxLg:hidden');
+      navContainer.classList.remove('flex-col');
+      navContainer.classList.remove('text-right');
       navLinks[0].classList.add('mr-8') // home
       navLinks[1].classList.add('mr-8') // blog
       navLinks[2].classList.add('mr-8'); // contact-me
