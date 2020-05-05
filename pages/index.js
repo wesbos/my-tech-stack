@@ -12,7 +12,7 @@ const Index = ({ allPosts }) => {
   const title = 'Welcome! 👋'
   return (
     <Layout home title={title} >
-        <h1 className='text-6xl'>Welcome!</h1>
+        <h1 className='text-6xl'>Welcome Friends!</h1>
       <section className='flex flex-row-reverse items-center'>
       <span className='w-2/6'>
           <img className='rounded-full w-2/3' src='/images/profile.jpg'/>
